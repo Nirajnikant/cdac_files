@@ -1,0 +1,124 @@
+Today's Topics
+Packages & classpath
+Acces Specifiers
+Enter Eclipse IDE
+Arrays
+static keyword
+
+
+
+Revision
+Revise class , object & memory picture
+Q 1. What will happen ?
+Box b1;//as per JVM spec 4/8/16 to store ref type of var : on the stack(local var)
+b1=new Box(1,2,3);//BOx class info will be loaded : metspace(method area), instance --on heap
+mem allocated for state : non static data member
+//obj : CP -->loaded cls info , width,depth height , color...
+s.o.p(b1.getBoxDimensions());//b1---> obj --CP --> method area 
+s.o.p(b1.getBoxVolume());//6.0
+Box b2=b1;//how many objs for GC : 0, b1 n b2 ---> 1st box instance
+s.o.p(b2.getBoxDimensions());//1.0 2.0 3.0
+b1=null;//b1 is de refed, , how many objs for GC :0
+//s.o.p(b1.getBoxDimensions());//run time err : java.lang.NullPointerException
+s.o.p(b2.getBoxDimensions());//1.0 2.0 3.0
+b2=null;//how many objs for GC : 1
+s.o.p(b2.getBoxDimensions());//run time err : java.lang.NullPointerException
+
+
+Q 2. What will happen ?
+Box b1=new Box(1,2,3);//b1 ---> Box : 1.0,2.0,3.0
+b1=new Box(2,3,4);//re assigning the ref, b1 ---> Box : 2.0,3.0,4.0
+Any objects marked for GC ? YEs : 1 , 1st box obj marked for GC
+
+Q 3. What will happen?
+Box b1=new Box(10,20,30);//b1 --> Box 10,20,30
+b1.testMe();
+.....
+
+In Box class :
+void testMe()
+{
+  Box tmp=new Box(10,20,30);//tmp --> Box : 10,20,30
+}//testMe's stack frm popped out --local var "tmp" : not avlble
+
+Any objects marked for GC , after testMe method's execution ? : YES : 1 obj created in the method n it's ref not reted to the caller.
+
+Q 4 What will happen?
+Box b1=new Box(10,20,30);//b1 --> Box 10,20,30
+Box b2=b1.testMe();//b2=tmp : copy of refs
+.....
+
+In Box class :
+Box testMe()
+{
+  Box tmp=new Box(10,20,30);//tmp --> Box : 10,20,30
+  return tmp;
+}
+Any objects marked for GC , after testMe method's execution ? NO
+
+
+Confirm understanding of copy of references using Object's hashCode method.
+-------------------------------
+
+1. Packages & access specifiers
+refer to "regarding packages"
+Objective : Place Box class under package "com.cdac.core" n place TestBox under "com.tester"
+
+2. refer to the diagram "Access specifiers" & "Understanding access specifiers" 
+Set it up & confirm the table.
+
+
+3. Enter Eclipse IDE
+
+4. Regarding Arrays
+
+In Java, arrays are full-fledged objects. Like any other objects, arrays are dynamically created & stored on the heap. 
+
+Arrays (like any other object) are  associated with the class. All arrays of the same dimension and type have the same class. The length of an array does not play any role in establishing the array's class. For example, an array of three ints has the same class as an array of three hundred ints.(Name of the class loaded for this : [I) The length of an array is considered part of its instance data.
+
+eg : The class name for single dimension array of ints is "[I". The class name for a three-dimensional array of bytes is "[[[B". The class name for single dimension array of booleans is "[Z"
+
+Array size(length) is fixed.Implicit super class of array is java.lang.Object.
+
+
+4.1 Create Array of primitive types
+
+Objective -- Accept no of data samples(of type double) from User(using scanner)
+Create suitable array & display it using for-each loop , to confirm default values.
+
+Accept data from User(scanner) & store it in the array.
+Display array data using  for loop.
+Display array data using for-each loop
+
+for-each loop(enhanced for loop)
+syntax
+
+
+Important statement
+Works on a copy of array element.
+
+How will you confirm ????????
+
+for-each limitations
+1. Can only iterate from 1st elem to last elem , with step size +1
+2. Works on a copy of array elems
+(can't be used for modifying array elems).
+
+-----------------
+4.2 Array of references
+
+Add Box class into "com.cdac.core"
+Create a tester class  : TestBoxArray : "com.tester"
+
+Objective : Ask user(client) , how many boxes to make ?
+Accept Box dims for these boxes.
+Store these details suitably.
+
+1. Display using single for-each loop, box dims n volume
+
+2. Double box width for all boxes having volume > 100.(USE for-each & solve this)
+
+
+5. static keyword 
+
+
