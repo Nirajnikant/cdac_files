@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var array1 = ['one', 'two', 'three', 'four', 'five'];
+            var array2 = new Array;
+            function revarrelement() {
+                for(var i=0;i<array1.length;i++) {
+                    array2[array1.length-1-i]=reverseString(array1[i]);
+                }
+                array2.sort();
+                console.log(array2);
+            };
+
+            function reverseString(str) {
+                var splitString = str.split("");
+                // ["h", "e", "l", "l", "o"]
+                console.log('splitstring '+splitString);
+                var reverseArray = splitString.reverse(); 
+                // ["o", "l", "l", "e", "h"]
+                console.log('reverseArray '+reverseArray);
+                var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+                // "olleh"
+                console.log('joinArray ' + joinArray);
+                return joinArray; // "olleh"
+            }
+            
+            revarrelement();
+        </script>
+
+    </body>
+</html>

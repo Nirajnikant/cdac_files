@@ -1,0 +1,685 @@
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  22/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ques1 - Difference between kernel and OS
+-->
+Operating System - OS is actually a whole stack of software which
+includes kernel also. Hence responsibilities of an OS include but not limited to manage the hardware of your machine, provide GUI for you to interact with the hardware, provide a framework which can be leveraged to write application softwares which can run over the OS.
+1. Provides interface between user and hardware.
+2. Protection and security.
+3. It is the first program to load when computer boots up.
+Examples of OS are:
+Windows (XP, 7, 8, etc. other variants)
+Ubuntu, Kubuntu
+Mac OSX
+Solaris, etc.
+
+Kernel - This is the lowest level of software stack of OS kernel is a part of OS which does all the dirty work of talking to the hardware of your machine. Kernel exposes the functionality of the hardware of the machine in the form of system calls. These system calls are further used by the software layers above to design API, etc. I will give example in existing kernel in reference to the examples I gave for OS. The kernel is the main part of the operating system and is responsible for translating the command into something that can be understood by the computer. The main
+functions of the kernel are:
+1. memory management
+2. network management
+3. device driver
+4. file management
+5. process management
+Examples -
+Windows NT is the kernel used in Windows
+Linux is the kernel used in Ubuntu and Kubuntu
+XNU (a fork of Unix) is the kernel of Mac OSX
+Solaris-kernel (again a fork of Unix) is the kernel of Solaris
+
+-------------------------------------------------
+
+Ques2 - Write one-liner on Type of OS with examples
+------>
+• Batch OS
+Batch os rather than interacting directly with computer it uses an operator to sort job with similar needs.
+Eg. Payroll System , Bank Invoice System
+• Distributed OS
+Multiple central processors are used by Distributed systems to serve multiple real-time applications and multiple users.
+Eg. AIX operating system for IBM RS/6000 computers.
+• Multitasking OS
+Multitasking, in an operating system, is allowing a user to perform more than one computer task at a time.
+Eg. Microsoft Windows 2000, IBM's OS/390, and Linux
+• Network OS
+Network Operating System is a computer operating system that facilitates to connect and communicate various autonomous computer over the network.
+Eg. Microsoft Windows Server 2003, Microsoft Windows Server 2008,
+UNIX, Linux.
+• Real-OS
+Real-time os is an operating system intended to serve real time application that process data as it comes in without buffer delay.
+Eg. PSOS, VRTX, RT Linux
+•Mobile OS
+A mobile operating system (OS) is the software that allows mobile devices like phones, tablets and other smart devices like wearable technology to run applications and other programs.
+EX. Andorid, ios, Symbian
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  23/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Explain Linux Directory Structure and File System Hierarchy?
+----->
+The Linux File Hierarchy Structure or the Filesystem Hierarchy Standard (FHS) defines the directory structure and directory contents in Unix-like operating systems. It is maintained by the Linux Foundation. In the FHS, all files and directories appear under the root directory /, even if they are stored on different physical or virtual devices. Some of these directories only exist on a particular system if certain subsystems, such as the X Window System, are installed. Most of these directories exist in all UNIX operating systems and are generally used in much the same way; however, the descriptions here are those used specifically for the FHS and are not considered authoritative for platforms other than Linux.
+    1. / (Root): Primary hierarchy root and root directory of the entire file system hierarchy.
+        -Every single file and directory starts from the root directory
+        -The only root user has the right to write under this directory
+        -/root is the root user’s home directory, which is not the same as /
+    2. /bin : Essential command binaries that need to be available in single-user mode; for all users, e.g., cat, ls, cp.
+        -Contains binary executables
+        -Common linux commands you need to use in single-user modes are located under this directory.
+        -Commands used by all the users of the system are located here e.g. ps, ls, ping, grep, cp
+    3. /boot : Boot loader files, e.g., kernels, initrd.
+        -Kernel initrd, vmlinux, grub files are located under /boot
+        -Example: initrd.img-2.6.32-24-generic, vmlinuz-2.6.32-24-generic
+    4. /dev : Essential device files, e.g., /dev/null.
+        -These include terminal devices, usb, or any device attached to the system.
+        -Example: /dev/tty1, /dev/usbmon0
+    5. /etc : Host-specific system-wide configuration files.
+        -Contains configuration files required by all programs.
+        -This also contains startup and shutdown shell scripts used to start/stop individual programs.
+        -Example: /etc/resolv.conf, /etc/logrotate.conf.
+    6. /home : Users’ home directories, containing saved files, personal settings, etc.
+        -Home directories for all users to store their personal files.
+        -example: /home/kishlay, /home/kv
+    7. /lib : Libraries essential for the binaries in /bin/ and /sbin/.
+        -Library filenames are either ld* or lib*.so.*
+        -Example: ld-2.11.1.so, libncurses.so.5.7
+    8. /media : Mount points for removable media such as CD-ROMs (appeared in FHS-2.3).
+        -Temporary mount directory for removable devices.
+        -Examples, /media/cdrom for CD-ROM; /media/floppy for floppy drives; /media/cdrecorder for CD writer
+    9. /mnt : Temporarily mounted filesystems.
+        -Temporary mount directory where sysadmins can mount filesystems.
+    10. /opt : Optional application software packages.
+        -Contains add-on applications from individual vendors.
+        -Add-on applications should be installed under either /opt/ or /opt/ sub-directory.
+    11. /sbin : Essential system binaries, e.g., fsck, init, route.
+        -Just like /bin, /sbin also contains binary executables.
+        -The linux commands located under this directory are used typically by system administrator, for system maintenance purpose.
+        -Example: iptables, reboot, fdisk, ifconfig, swapon
+    12. /srv : Site-specific data served by this system, such as data and scripts for web se rvers, data offered by FTP servers, and repositories for version control systems.
+        -srv stands for service.
+        -Contains server specific services related data.
+        -Example, /srv/cvs contains CVS related data.
+    13. /tmp : Temporary files. Often not preserved between system reboots, and may be severely size restricted.
+        -Directory that contains temporary files created by system and users.
+        -Files under this directory are deleted when system is rebooted.
+    14. /usr : Secondary hierarchy for read-only user data; contains the majority of (multi-)user utilities and applications.
+        -Contains binaries, libraries, documentation, and source-code for second level programs.
+        -/usr/bin contains binary files for user programs. If you can’t find a user binary under /bin, look under /usr/bin. For example: at, awk, cc, less, scp
+        -/usr/sbin contains binary files for system administrators. If you can’t find a system binary under /sbin, look under /usr/sbin. For example: atd, cron, sshd, useradd, userdel
+        -/usr/lib contains libraries for /usr/bin and /usr/sbin
+        -/usr/local contains users programs that you install from source. For example, when you install apache from source, it goes under /usr/local/apache2
+        -/usr/src holds the Linux kernel sources, header-files and documentation.
+    15. /proc : Virtual filesystem providing process and kernel information as files. In Linux, corresponds to a procfs mount. Generally automatically generated and populated by the system, on the fly.
+        -Contains information about system process.
+        -This is a pseudo filesystem contains information about running process. For example: /proc/{pid} directory contains information about the process with that particular pid.
+        -This is a virtual filesystem with text information about system resources. For example: /proc/uptime
+
+-------------------------------------------------
+
+2. Create 5 directories under /root/edac_os
+
+dir1
+dir2
+dir3
+dir4
+dir5
+
+Create the following files under each directory
+
+dir1 --> file1
+dir2 --> file2
+dir3 --> file3
+dir4 --> file4
+dir5 --> file5
+
+Create file6 and file7 under dir4
+Delete file1 under dir1
+Copy all files from dir4 to dir1
+Move all files from dir1 to dir2
+Delete file1 from dir2
+Remove all the directories except dir2
+Rename dir2 ro finaldir
+List the files under finaldir
+Each file under finaldir should have the following content - 'I'm a file under finaldir'
+
+--------->
+[root@osboxes ~]# mkdir edac_os/dir{1..5}
+[root@osboxes ~]# ls edac_os
+dir1  dir2  dir3  dir4  dir5
+[root@osboxes ~]# touch edac_os/dir1/file1
+[root@osboxes ~]# touch edac_os/dir2/file2
+[root@osboxes ~]# touch edac_os/dir3/file3
+[root@osboxes ~]# touch edac_os/dir4/file4
+[root@osboxes ~]# touch edac_os/dir5/file5
+[root@osboxes ~]# touch edac_os/dir4/file{6..7}
+[root@osboxes ~]# rm -rf edac_os/dir1/file1
+[root@osboxes ~]# cp edac_os/dir4/* edac_os/dir1
+[root@osboxes ~]# mv edac_os/dir1/* edac_os/dir2
+[root@osboxes ~]# rm -rf edac_os/dir3/file1
+[root@osboxes ~]# rm -rf edac_os/dir2/file1
+[root@osboxes ~]# rm -rf edac_os/dir{3..5}
+[root@osboxes ~]# rm -rf edac_os/dir1
+[root@osboxes ~]# ls edac_os
+dir2
+[root@osboxes ~]# mv edac_os/dir2 edac_os/finaldir
+[root@osboxes ~]# ls edac_os/finaldir
+file2  file4  file6  file7
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file4
+[root@osboxes ~]# cat edac_os/finaldir/file4
+I'm a file under finaldir
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file2
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file6
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file7
+[root@osboxes ~]#
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  24/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Task1]
+-------
+Create a script that takes a number as user input and tells if prvided number is a two digit number or single digit number.
+
+#!/bin/bash
+
+read -p "Enter a no. " num
+
+case $num in
+  [0-9])
+    printf '\nSINGLE DIGIT NUMBER!'
+    ;;
+  [0-9][0-9])
+    printf '\nDOUBLE DIGIT NUMBER!'
+    ;;
+  *)
+    printf >&2 '\nINVALID INPUT!'
+    ;;
+esac
+
+-------------------------------------------------
+[Task2]
+-------
+Create a command named as 'myos' - running this command should display the OS you are working on 
+
+alias myos="uname -o"
+
+-------------------------------------------------
+[Task3]
+-------
+Create a command named as 'myshell' - running this command should display the shell you are working on
+
+alias myshell="echo "$SHELL""
+
+-------------------------------------------------
+[Task4]
+-------
+Create a script that takes a  path and tells you if provoided path is a file or a directory.
+
+#!/bin/bash
+
+read -p "Enet a file path" path
+
+if [[ -f $path ]]
+then
+    echo "$path is a file."
+elif [[ -d $path ]]
+then
+	echo "$path is a directory."
+else
+	echo "Invalid path"
+fi
+
+-------------------------------------------------
+[Task5]
+-------
+Create a script that takes a directory name and lists down all the files (only files) under that dir.
+
+#!/bin/bash
+
+read -p "Enter a directory name : " dir
+
+if [[ -d $dir ]]
+then
+	ls -p | grep -v /
+else
+	echo "Enter a valid file path"
+fi
+
+-------------------------------------------------
+[Task6]
+-------
+Create a script to get the current date, time, username and current working directory.
+
+#!/bin/bash
+
+date
+sleep 2s
+whoami
+sleep 2s
+pwd
+
+-------------------------------------------------
+[Task7]
+-------
+Create a script that creates a dir named test and then creates 5 files under it named as file1, file2..file5 and then renames all files by adding .txt extension to all file names
+
+#!/bin/bash
+
+rm -rf test
+mkdir test
+touch test/file{1..5}
+mv test/file1 test/file1.txt
+mv test/file2 test/file2.txt
+mv test/file3 test/file3.txt
+mv test/file4 test/file4.txt
+mv test/file5 test/file5.txt
+
+-------------------------------------------------
+
+1- How to make the alias permanent?
+To create an alias permanently add the alias to your .bashrc file
+
+gedit ~/.bashrc
+
+And then add your alias at the bottom.
+Now execute . ~/.bashrc in your terminal (there should be a space between the . and ~/.bashrc.
+Alias is made permanent now.
+
+-------------------------------------------------
+
+2- You have a list of files. Traverse through the list and display the permision set of each file?
+
+#!/bin/bash
+
+while read line
+do
+	shell=$(cat /etc | grep "$line" | stat -c "%a %n" "/etc/$line")
+	echo "$line -----> $shell"
+done < list.txt
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  28/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ques - Explain the second field in ps -elf output?
+-->
+The second field of ps -elf displays the states of the process in operating system
+Here are the different values that the s, stat and state output specifiers (header "STAT" or "S") will display to describe the state of a process:
+
+               D    uninterruptible sleep (usually IO)
+               I    Idle kernel thread
+               R    running or runnable (on run queue)
+               S    interruptible sleep (waiting for an event to complete)
+               T    stopped by job control signal
+               t    stopped by debugger during the tracing
+               W    paging (not valid since the 2.6.xx kernel)
+               X    dead (should never be seen)
+               Z    defunct ("zombie") process, terminated but not reaped by its parent
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  29/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Write a script that performs following operations on the given set of files?	(15)
+
+a) displays the total count of files
+b) displays the count of *.pdf files and *.docx
+c) rename all *.pdf to *.docx
+d) displays the count of *.pdf files and *.docx
+e) displays only those files which have underscore '_' in their names
+
+msexchange.qlv
+NecessaryComplianceViolations.docx
+NewDoc12-23-202016.51.pdf
+OpenCases.csv
+OPS-94632_new.tar
+OS-Windows.pdf
+QQL.json
+Ransomware.docx
+Red_HatReferenceGuide.pdf
+ScriptAnalysis.xlsx
+Scriptpage.jpg
+SolarWinds_Supply-Chain_Attack_UDdashboard.json
+Splunk_PC_App.png
+Splunk_VM_App.png
+Studio_Malware_July_2013.xlsx
+TroubleshootingAgentPermissionIssuesforWindows.pdf
+UDC_Demo_20210106.xml
+Video2020-11-10at7.12.43PM.mp4
+VMware-workstation-full-15.5.5-16285975.exe
+VMware-workstation-full-16.0.0-16894299.exe
+WhatsAppImage2020-11-05at2.47.06PM.jpeg
+win.txt
+----->
+
+#!/bin/bash
+
+count=$(ls | wc -l)
+echo "Total files ------> $count"
+pdf=$(ls | grep ".pdf" | wc -l)
+echo ".pdf ----> $pdf"
+docx=$(ls | grep ".docx" | wc -l)
+echo ".docx ----> $docx"
+
+for file in *.pdf
+do
+    mv -v "$file" "${file%.pdf}.docx"
+done;
+
+pdf1=$(ls | grep ".pdf" | wc -l)
+echo ".pdf ----> $pdf1"
+docx1=$(ls | grep ".docx" | wc -l)
+echo ".docx ----> $docx1"
+
+un=$(ls | grep "_")
+echo -e "files with _ \n$un"
+
+-------------------------------------------------
+2. Write a script that displays the user information on the linux box in the following format:	(10)
+Username	Shell assigned to that user
+-->
+#!/bin/bash
+
+var=$(ls /home)
+for usr in $var
+do
+	info_user=$(cat /etc/passwd | grep "$usr" | awk -F':' '{print $7}')
+	echo "$usr ---->  $info_user"
+done
+-------------------------------------------------
+
+3. Write a command that fetches the list of all files under /root directory that are more than 2KB in size
+-->
+#!/bin/bash
+
+cd /root
+find . -type f -size +2k
+
+-------------------------------------------------
+
+4. Create a script that asks for a user name and add that user with password same as that of user name. The user added should be assigned nologin shell
+-->
+#!/bin/bash
+
+read -p "Enter a username" usr
+
+useradd -s /sbin/nologin -p $usr $usr
+
+-------------------------------------------------
+
+5. Create a calculator program in bash that takes two numbers (integers) and display menu to the user for various mathematical operations. Hint: Switch Case Break
+-->
+#!/bin/bash
+
+read -p "Enter first no. " a
+read -p "Enter second no. " b
+
+echo -e "Choose a operation to perform \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division"
+read o
+
+case $o in
+	1|Addition|Add|add)
+		let "add = $a + $b"
+		echo $add
+		;;
+	2|Subtraction)
+		let "sub = $a - $b"
+		echo $sub
+		;;
+	3|Multiply|multiply)
+		let "mul = $a * $b"
+		echo $mul
+		;;
+	4|Divide|divide|division)
+		let "div = $a / $b"
+		echo $div
+		;;
+	*)
+		echo "Invalid operation"
+		;;
+esac
+
+-------------------------------------------------
+
+6. Create 2 VMs - both CentOS 7 (with fresh snapshots) with names - machineA and machineB
+	1. From machineA copy any file to machineB
+	2. From machineA - create a dir named 'testdir' on machineB
+-->
+            1.
+                [osboxes@osboxes ~]$ scp /home/osboxes/assignment2_q2.txt nirajnikant@192.168.42.6:/home/nirajnikant
+                The authenticity of host '192.168.42.6 (192.168.42.6)' can't be established.
+                ECDSA key fingerprint is SHA256:eQK2RROLXvZHwzR8JPvOYczIxronvYbwOueWxxtzJIA.
+                ECDSA key fingerprint is MD5:6a:95:2a:f7:ce:bc:2a:82:d7:58:ca:e0:25:2f:0e:a2.
+                Are you sure you want to continue connecting (yes/no)? yes
+                Warning: Permanently added '192.168.42.6' (ECDSA) to the list of known hosts.
+                nirajnikant@192.168.42.6's password:
+                assignment2_q2.txt                                   100% 1219   808.5KB/s   00:00
+
+            2.
+                [root@osboxes edac_os]# ssh nirajnikant@192.168.42.6
+                nirajnikant@192.168.42.6's password:
+                Welcome to KDE neon User Edition 5.22 (GNU/Linux 5.11.0-37-generic x86_64)
+                Last login: Sat Oct  9 00:27:12 2021 from 192.168.42.6
+                 nirajnikant@zimmer  ~  ls
+                assignment2_q2.txt                                        Music
+                day5_2.sh                                                 Pictures
+                Desktop                                                   Public
+                Documents                                                 rename.sh
+                Downloads                                                 snap
+                index.html                                                Templates
+                'Infosys Campus Recruitment - No Show Communication.pdf'   Videos
+                javasharedresources                                      'VirtualBox VMs'
+                list.txt
+                 nirajnikant@zimmer  ~  cd Documents
+                /home/nirajnikant/Documents
+                 nirajnikant@zimmer  ~/Documents  mkdir testdir
+                mkdir: created directory 'testdir'
+                 nirajnikant@zimmer  ~/Documents  ls
+                java  testdir  workspace-spring-tool-suite-4-4.12.0.RELEASE
+                 nirajnikant@zimmer  ~/Documents 
+
+-------------------------------------------------
+
+7. Create a script that depicts sending the process to background so that the next command in sequence can run without wait
+-->
+#!/bin/bash
+
+sleep 360s &
+echo "Sleep process is sent in background and then this echo caommand is being executed"
+
+-------------------------------------------------
+
+8. Create a script that displays the system information like: OS name, kernel version, RAM, etc.
+-->
+#!/bin/bash
+
+os=$(uname -o)
+echo "Operating System ----> $os"
+
+kernel=$(uname -r)
+echo "Kernel version   ----> $kernel"
+
+mem=$(free -m)
+echo -e "Memory details  ----->\n $mem"
+
+cpu=$(lscpu | grep "Model name" | awk -F':' '{print $2}')
+echo "CPU details      ----> $cpu"
+
+-------------------------------------------------
+
+9. Create a shell script to find the largest among the 3 given numbers
+-->
+#!/bin/bash
+
+read -p "Enter first no.  " a
+read -p "Enter second no. " b
+read -p "Enter third no.  " c
+
+if [[ $a > $b ]]
+then
+	if [[ $a > $c ]]
+	then
+		echo "$a is the greatest"
+	else
+		echo "$c is the greatest"
+	fi
+else
+	if [[ $b > $c ]]
+        then
+                echo "$b is the greatest"
+        else
+                echo "$c is the greatest"
+        fi
+fi
+
+-------------------------------------------------
+
+10. Create a shell program to check whether a given string is palindrome
+-->
+#!/bin/bash
+
+read -p "Enter a no.: " num
+
+s=0
+rev=""
+temp=$num
+
+while [ $num -gt 0 ]
+do
+	s=$(( $num % 10 ))
+
+	num=$(( $num / 10 ))
+
+	rev=$( echo ${rev}${s} )
+done
+
+if [ $temp -eq $rev ];
+then
+	echo "Number is palindrome"
+else
+	echo "Number is NOT palindrome"
+fi
+
+-------------------------------------------------
+
+11. Create a shell program to count number of words, characters, white spaces and special symbols in a given text
+-->
+#! /bin/bash
+
+echo "Enter a String"
+
+read text
+
+word=$(echo -n "$text" | wc -w)
+
+char=$(echo -n "$text" | wc -c)
+
+space=$(expr length "$text" - length `echo "$text" | sed "s/ //g"`)
+
+special=$(expr length "${text//[^\~!@#$&*()]/}")
+
+echo "Number of Words = $word"
+echo "Number of Characters = $char"
+echo "Number of White Spaces = $space"
+echo "Number of Special symbols = $special"
+
+-------------------------------------------------
+
+12. Create a script to remove all empty lines from a file
+-->
+#!/bin/bash
+
+read -p "Enter file path " file
+sed -i '/^$/d' $file
+
+-------------------------------------------------
+
+13. Create a script that fetches only the IP address of the machine from output of ifconfig command
+-->
+#!/bin/bash
+
+ifconfig | grep -Po "inet \d+\.\d+\.\d+\.\d+" | grep -v "inet 127"
+
+-------------------------------------------------
+
+14. How to run the c program in bash
+-->
+to run a c program in bash first we need to create the desired c program
+then we run the command
+        gcc hello.c -o hello.sh
+this creates a obejct file for bash
+which can be executed as ./hello.sh
+
+-------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  30/09/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ques - Difference between 6,9 and 15 kill Signals.																								30/09/2021
+-->
+The kill -9 command sends a SIGKILL signal indicating to a service to shut down immediately. An unresponsive program will ignore a kill command, but it will shut down whenever a kill -9 command is issued. Use this command with caution. It bypasses the standard shutdown routine so any unsaved data will be lost.
+
+The SIGABRT or kill -6 signal is sent to a process to tell it to abort, i.e. to terminate. The signal is usually initiated by the process itself when it calls abort() function of the C Standard Library, but it can be sent to the process from outside like any other signal.
+
+The SIGTERM or kill -15 signal is sent to a process to request its termination. Unlike the SIGKILL signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate.
+
+
+-------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################  03/10/2021  ###################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Que 1 - Need of memory management?
+-->
+In CPU scheduling we see that how the CPU can be shared by a set of processes.
+As a result of this CPU Utilization, as well as speed of the computer's response
+to its users could be improved.
+To realize this increase in performance , however, we must keep several processes in memory
+that is, we must share memory.
+
+For this Memory management is necessary.
+
+• This technique decides which process will get memory at what time.
+• It also keeps the count of how much memory can be allocated to a process.
+• It tracks when memory is freed or unallocated and updates the status.
+• The memory management function keeps track of the status of each memory location, either allocated or free
+• Subdividing memory to accommodate multiple processes
+• Memory needs to be allocated to ensure a reasonable supply of ready processes to consume available processor time
+
+-------------------------------------------------
+
+Que 2 - Given free memory partitions of 100K, 500K, 200K, 300K, and 600K (in order), how would 
+each of the First-fit, Best-fit, and Worst-fit algorithms place processes of 212K, 417K, 112K, and 426K (in 
+order)
+-->
+First-Fit:
+212K is put in 500K partition.
+417K is put in 600K partition.
+112K is put in 200K partition.
+426K must wait.
+Best-Fit:
+212K is put in 300K partition.
+417K is put in 500K partition.
+112K is put in 200K partition.
+426K is put in 600K partition.
+Worst-Fit:
+212K is put in 600K partition.
+417K is put in 500K partition.
+112K is put in 300K partition.
+426K must wait.
+In this example, Best-Fit turns out to be the best.
+
+-------------------------------------------------
+
+Que 3 - Which algorithm makes the most efficient use of memory?
+-->
+Best-Fit turns out to be the best.
+
+----------------------------------------------------------------

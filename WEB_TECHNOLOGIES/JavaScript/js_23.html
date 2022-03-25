@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        body {font-family: "Lato", sans-serif}
+        .mySlides {display: none}
+        </style>
+        <script>
+            
+
+            function procs() {
+                let r = parseInt(document.getElementById("radiusIn").value);
+                if(r>0) {
+                    var area = Math.PI * r * r;
+                    var circumference = 2*Math.PI*r;
+                    document.getElementById("displayarea").innerHTML="Area = " + area;
+                    document.getElementById("displaycircum").innerHTML="Circumference = " + circumference;
+                }
+                else {
+                    window.alert("Enter radius greater than 0");
+                    document.getElementById("radiusIn").focus();
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter the radius : 
+            <input type="text" id="radiusIn" size="10" autofocus> 
+            <br><br>
+            <input type="button" value="Dispaly result" id="display" onclick="procs()">
+            <p id="displayarea"></p><br>
+            <p id="displaycircum"></p>
+        </form>
+    </body>
+</HTML>

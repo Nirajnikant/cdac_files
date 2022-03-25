@@ -1,0 +1,7 @@
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\bin\Debug\Practice.exe.config
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\bin\Debug\Practice.exe
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\bin\Debug\Practice.pdb
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\obj\Debug\Practice.csproj.AssemblyReference.cache
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\obj\Debug\Practice.exe
+D:\DAC\DotNet\VisualStudio\Day1_21\Practice\obj\Debug\Practice.pdb

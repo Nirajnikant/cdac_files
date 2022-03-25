@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 13</title>
+    </head>
+    <body>
+        <script>
+            var day = new Array();
+            day[0] = "Sunday";
+            day[1] = "Monday";
+            day[2] = "Tuesday";
+            day[3] = "Wednesday";
+            day[4] = "Thursday";
+            day[5] = "Friday";
+            day[6] = "Saturday";
+
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+
+            var now = new Date();
+            console.log(now);
+            var end = new Date(now.getFullYear(), 12, 1);
+            console.log(end);
+            var diff = end - now;
+            var oneDay = 24 * 60 * 60 * 1000;
+            var remDay =  Math.floor(diff/oneDay);
+            var dayy = day[now.getDay()];
+            var mnth = month[now.getMonth()];
+            document.write("Today is "+ dayy +", "+now.getDate()+" "+mnth+" "+now.getFullYear()+", Welcome and good afternoon to you.<br>");
+            document.write("No. of days left till end of the year : " + remDay);
+        </script>   
+    </body>
+</html>

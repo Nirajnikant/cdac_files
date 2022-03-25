@@ -1,0 +1,29 @@
+[root@osboxes ~]# mkdir edac_os/dir{1..5}
+[root@osboxes ~]# ls edac_os
+dir1  dir2  dir3  dir4  dir5
+[root@osboxes ~]# touch edac_os/dir1/file1
+[root@osboxes ~]# touch edac_os/dir2/file2
+[root@osboxes ~]# touch edac_os/dir3/file3
+[root@osboxes ~]# touch edac_os/dir4/file4
+[root@osboxes ~]# touch edac_os/dir5/file5
+[root@osboxes ~]# touch edac_os/dir4/file{6..7}
+[root@osboxes ~]# rm -rf edac_os/dir1/file1
+[root@osboxes ~]# cp edac_os/dir4/* edac_os/dir1
+[root@osboxes ~]# mv edac_os/dir1/* edac_os/dir2
+[root@osboxes ~]# rm -rf edac_os/dir3/file1
+[root@osboxes ~]# rm -rf edac_os/dir2/file1
+[root@osboxes ~]# rm -rf edac_os/dir{3..5}
+[root@osboxes ~]# rm -rf edac_os/dir1
+[root@osboxes ~]# ls edac_os
+dir2
+[root@osboxes ~]# mv edac_os/dir2 edac_os/finaldir
+[root@osboxes ~]# ls edac_os/finaldir
+file2  file4  file6  file7
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file4
+[root@osboxes ~]# cat edac_os/finaldir/file4
+I'm a file under finaldir
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file2
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file6
+[root@osboxes ~]# echo "I'm a file under finaldir" > edac_os/finaldir/file7
+[root@osboxes ~]# 
+

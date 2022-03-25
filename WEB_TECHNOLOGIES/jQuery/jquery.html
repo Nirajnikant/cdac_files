@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>class_live</title>
+        <!--<script src="./script/jquery-3.6.0.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>.border{border:3px dashed red}</style>
+    </head>
+    <body>
+
+        <script>
+            
+            $(function(){
+                $(".c1").css("color","red");
+                
+                $("#btn1").click(function() {
+                    $("h1").addClass("border");
+                    $("h2").removeClass("c1");
+                })
+                
+            })
+            $(function() {
+                var plist = $("div p");
+                plist.each(function(){
+                    console.log($(this))    //this  raw DOM object 
+                                            //to convert to jquery object enclosed in $()
+                    
+                })
+
+                
+                plist.each(function(index){
+                    console.log(index + " " +$(this).html())
+                })
+
+                plist.each(function(index, element){
+                    console.log(index + " " +$(element).html())
+                })
+
+
+            })
+            
+        </script>
+        <h1>Welcome to jQuery</h1>
+        <p class="c1">Paragraph-1</p>
+        <p id="n1">Parageaph-2</p>
+        <p>Paragraph-3</p>
+        <div>
+            <p>First para</p>
+            <p>Second para</p>
+            <p>Third para</p>
+            <p>Fourth para</p>
+        </div>
+        <div>
+            <p>Fifth para</p>
+            <p>Sixth para</p>
+        </div>
+        <p>seveth para</p>
+        <h2 class="c1">Hwaeder 2</h2>
+        <input type="button" value="show" id="btn1">  <!-- uper ek  function hai-->
+
+    </body>
+</html>
+
+<!--
+    jquery selector : allow to change the behaviour of the doc
+    - tag
+    - class
+    - id
+    --------------------
+
+    $(element)   === jQuery(element)
+
+    $("p")       ----------select all paras  
+                 -- js code document.getElementByTag("p")   
+
+    $("h1")      ---------select all h1
+    $("a")       ---------select all anchors
+    $("p,h3")    --------all para and h3 is selected in one go
+    $("div,p")   --------select all div and para
+    $("div p")   --------select all paras inside div
+    $(".c1")     --------select all elemnts that have class c1
+    $(".c1, .c2")--------select either or all of c1 nad c2
+    $("#p1")     ---------select by id 
+
+console    
+    $("p").hide()   --hides stuff
+    $("p").show()   --shows stuff
+    $("#n1").css("color","red").css("background-color","green")
+    $("#n1").text()  --to show the data between tags of id 
+    $("#n1").html()-----^
+    $("#n1").html("New Content")  -- change data 
+    $("#n1").html("<h3>New Content<h3>") 
+    $("p").length
+
+    $().html()   === .innerhtml
+    $("input")  -- select all form elements which stars with <input
+    $(":input") -- select all form elements incl textarea, select, button alll
+    $("input[type="text"]")  --select <input type="text">
+            $(":text")               --select <input type="text">
+    $(":radio")  -- select all elements with <input type="radio">
+    
+        eq(n) -selects the elements at index n
+        gt(n) -select elements greater than index n
+    
+    $("p:eq(0)")  -- select first para
+        $("p:first")  -- ^
+
+    $("p:last")
+
+    $("p:eq(4)")  -- select fourth para
+    
+
+    $("div p:first")  --- select the first para --1 o/p
+    $("div p:first-child") ---select the first para in every div  --3 o/p
+
+    $("div p:nth-child(2)") ---select the 2nd para in every div
+                            ---1 base indexinging --index starts with 1
+    
+    $("p:contains('Second')") --- contains filter
+                            ----- searchs Second                         
+    
+    text() -- shows plain text
+    html()  -- shows according to html markup
+    
+    append() -- suffix, add to the end of the element
+    $("element").append(new-content)
+
+    prepend  -- prefix, add to the begining of the element
+    $("element").prepend(new-content)
+
+    $("p:first").prepend("<span)This is a span</span>")"
+
+    appendTo() === append()
+        only syntax difference
+    (new-content).appendTo($(ori-elemt_)
+
+    prependTo() == prepend()
+
+
+    .wrap()
+        $("p:first").wrap("<h1></h1>")
+
+    appen --- add at end
+    prepend -- add in begining
+    wrap -- add in between
+
+        MULTIPLE CSS
+    $("p:first").css({"color":"red","font-weight":"15px"})
+
+    $("element").event(function(){})
+        eg.. $(#p1").click(function(){alert(...)})
+
+    on()
+    $("element").on(events,callback-func(){})
+
+    
+ANIMATIONS
+        $("element").hide(time in second)
+        .slideup()
+        .slidedown()
+        .fadeIN()
+        .fadeOut()
+
+
+        animate(parameters, duration, callback)   ---- custom animation
+
+
+
+PLUGIN
+jQUERY UI
+    .datepicker();  -- converts simple text input to date picker
+    .button();  -- any element can be converted to button  --span, div, link anything
+    .accordian;  --- amazing 
+
+
+
+
+
+
+
+
+
+
+
+
+                            JQUERY API DOCUMENTATION
+-->

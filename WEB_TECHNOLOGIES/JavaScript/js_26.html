@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Script>
+            function digsum() {
+                var num = parseInt(document.getElementById("ipnum").value);
+                let sum = 0;
+                let x = num;
+                if(num>=0 && num<1000) {
+                    while (x) {
+                        sum += x % 10;
+                        x = Math.floor(x / 10);
+                    }
+                    console.log(sum)
+                    document.getElementById("outpt").innerHTML="Sum of digits of "+ num + " is " + sum;
+                } 
+                else
+                    document.getElementById("outpt").innerHTML="Entered number is out of range";
+            };
+        </Script>
+    </head>
+    <body>
+        <form>
+            Enter a no. :
+            <input type="text" id="ipnum" placeholder="Positive and greater than 1000" size="25px"><br>
+            <input type="button" id="posit" value="Find digits sum" onclick="digsum()">
+            <p id="outpt"></p> 
+        </form>
+    </body>
+</html>

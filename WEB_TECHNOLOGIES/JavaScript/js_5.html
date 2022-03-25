@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Problem 5</title>
+    </head>
+    <body>
+        <script>
+            var n = 12345;
+            var sum=0;
+            var rem=0;
+            while(n>0) {
+                rem = n%10;
+                sum=sum+rem;
+                n=parseInt(n/10);
+            }
+            document.write("Sum = "+sum);
+
+
+        </script>
+    </body>
+</html>

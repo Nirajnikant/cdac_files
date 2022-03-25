@@ -1,0 +1,11 @@
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\Day3_24.exe.config
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\Day3_24.exe
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\Day3_24.pdb
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\day1_assignment.exe
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\day1_assignment.pdb
+D:\DAC\DotNet\VisualStudio\Day3_24\bin\Debug\day1_assignment.exe.config
+D:\DAC\DotNet\VisualStudio\Day3_24\obj\Debug\Day3_24.csproj.AssemblyReference.cache
+D:\DAC\DotNet\VisualStudio\Day3_24\obj\Debug\Day3_24.csproj.CoreCompileInputs.cache
+D:\DAC\DotNet\VisualStudio\Day3_24\obj\Debug\Day3_24.csproj.CopyComplete
+D:\DAC\DotNet\VisualStudio\Day3_24\obj\Debug\Day3_24.exe
+D:\DAC\DotNet\VisualStudio\Day3_24\obj\Debug\Day3_24.pdb

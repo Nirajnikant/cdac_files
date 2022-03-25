@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Members of my Group</h2>
+        <ol id="myList"></ol>
+        <script>
+            function myFunction() {
+                var arr = ["JOHN","STEVE","BEN","DAMON","IAN"];
+                for(var i=0;i<arr.length;i++){
+                    var node = document.createElement("LI");
+                    var textnode = document.createTextNode(arr[i])
+                    node.appendChild(textnode);
+                    document.getElementById("myList").appendChild(node);
+                }
+            }
+            myFunction();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+Modules:
+- core modules - built-in ---install Node eg http, fs
+- local modules  -- user defined 
+- third party modules  NPM MOST IMp
+
+FS - File system 
+
+- buffer
+- async
+
+
+asnc - file system
+
+HTTP module - web server app
+
+
+lib .js
+
+- vars
+- functions
+- json
+- classes
+
+
+user-def module mod1  -- require("./mod1")
+
+core module http   -- require("http")
+//RunServer.js
+let http = require("http")
+
+function handleReq(req, resp){
+    var d1 = new Date();
+
+    var body = "<html><body bgcolor='lightgreen'>";
+    body += "<h1>Welcome to Node, today is </h1>" + d1;
+    body += "</body></html>";
+    var content_length = body.length ;
+    resp.writeHead(200, {
+                  'Content-Length': content_length,
+                  'Content-Type': 'text/html'   });
+     
+     resp.end(body);
+
+}
+
+let server = http.createServer(handleReq);
+server.listen(3000, "localhost");
+
+------------------------
+
+
+import java.util.*;
+
+import java.util.Calender;
+
+
+
+-----------------------------------
+
+NodeJS application - package.json heart of every node prj
+
+
+
+var fs = require("fs")
+
+fs.xxxx()
+
+xxxx()
+xxxxSync()
+
+
+readFile()  - async call
+readFileSync()  - sync call
+
+
+
+
+
+
+
+

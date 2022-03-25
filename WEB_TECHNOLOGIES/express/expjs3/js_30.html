@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            span {
+                color: red;
+            }
+        </style>
+        <script>
+            
+            function validateForm() {
+                let ordr = document.getElementsByName("orderID").value;
+                let cname = document.getElementsByName("cname").value;
+                let bdate=document.getElementsByName("billDate").value;
+                let sdate=document.getElementsByName("shipDate").value;
+                let ttl = document.getElementsByName("total").value;
+                let arr =["orderID","cname","billDate","shipDate","total"];
+                for(e in arr) {
+                    var vorder = document.getElementsByName(arr[e]).value
+                    if(vorder === null || vorder =="") {
+                        alert("Everything field is mandatory")
+                        break;
+                    }
+                }
+                
+                if(cname.length<5) {
+                    document.getElementById("warn_name").innerHTML="Customer Name cannot be < 6 characters";
+                    document.getElementsByName("cname").value="";
+                    document.getElementsByName("cname").focus();
+                    if(bdate>sdate) {
+                        document.getElementsByName("warn_date").innerHTML="Billing date cannot be greater than Shipping date";
+                        document.getElementsByName("billDate").value="";
+                    }
+                }
+                
+                else if(bdate>sdate) {
+                    document.getElementsByName("warn_date").innerHTML="Billing date cannot be greater than Shipping date";
+                    document.getElementsByName("billDate").value="";
+                    document.getElementsByName("billDate").focus();
+                }
+                else
+                    display(ordr,cname,bdate,sdate,ttl);
+            }
+
+            function display(ordr,cname,bdate,sdate,ttl) {
+                let odata = "Order id : " +ordr;
+                let cdata = "Cust name : "+cname;
+                let bdata = "Billing Date : "+bdate;
+                let sdata = "Shipping Date : "+sdate;
+                let tdata = "Order Total : "+ttl;
+                let br = "<br>";
+
+                document.getElementById("divd").innerHTML = odata+br+cdata+br+bdata+br+sdata+br+tdata;
+            }
+        </script>
+    </head>
+    <body>
+        <form id="form1" action="process"  method="get">
+            Order ID :
+            <input type="text" name="orderID" required autofocus><br><br>
+            Cust name :  
+            <input type="text" name="cname" required>
+            <span id="warn_name"></span><br>
+            Enter Billing date : 
+            <input type="date" name="billDate" required>
+            <span id="warn_date"></span><br>
+            Enter Shipping date : 
+            <input type="date" name="shipDate" required><br><br>
+            Order total : 
+            <input type="text" name="total" required><br><br>
+            <button type="submit" onclick="validateForm(); return false;">Display</button><br><br>
+            
+        </form>
+        <div id="divd"></div>
+    </body>
+</html>

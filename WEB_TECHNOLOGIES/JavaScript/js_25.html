@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function strFun() {
+                
+                var srchstr = document.getElementById("srchstr").checked;
+                var up = document.getElementById("up").checked;
+                var low = document.getElementById("low").checked;
+                var trm = document.getElementById("trm").checked;
+                var concate = document.getElementById("concate").checked;
+                var rplace = document.getElementById("rplace").checked;
+                let str1 = document.getElementById("str1").value;
+                let str2 = document.getElementById("str2").value;
+                let str3 = document.getElementById("str3").value;
+                let output = document.getElementById("outpt");
+
+                const form = document.getElementById('myForm');
+
+                    form.addEventListener("submit", function(event){
+                    event.preventDefault(); // prevents form from submitting
+                })
+        
+                
+                if(srchstr) {
+                    //console.log(str1.search(str2));
+                    //output.innerHTML="found at position"+ str1.search(str2);
+                    if(str1.search(str2)!=-1) {
+                        console.log(str1.search(str2));
+                        output.innerHTML="found at position"+ str1.search(str2);
+                    }
+                    else 
+                        output.innerHTML="Not Found"
+                }
+                else if(up) {
+                    output.innerHTML=str1.toUpperCase();
+                    console.log(str1.toUpperCase());
+                }
+                else if(low) {
+                    output.innerHTML=str1.toLowerCase();
+                    console.log(str1.toLowerCase());
+                }
+                else if(trm) {
+                    console.log(str1.replace(/\s/g, ""));
+                    output.innerHTML=str1.replace(/\s/g, "");
+                }
+                else if(concate) {
+                        output.innerHTML=str1.concat(str2);
+                }
+                else if(rplace) {
+                    output.innerHTML=str1.replace(str2,str3);
+                }
+                
+            }
+        </script>
+    </head>
+
+    <body>
+        <form id="myForm">
+            Enter string : 
+            <input type="text" id="str1" required><br><br>
+            Enter sub string : 
+            <input type="text" id="str2"><br><br>
+            Repalce with string : 
+            <input type="text" id="str3"><br><br>
+            <input type="radio" name="options" id="srchstr">
+            Search substring in main string 
+            <input type="radio" name="options" id="up">
+            To Upper Case
+            <input type="radio" name="options" id="low">
+            To Lower Case
+            <input type="radio" name="options" id="trm">
+            Trim spaces 
+            <input type="radio" name="options" id="concate">
+            Concatenate
+            <input type="radio" name="options" id="rplace">
+            Replace
+            <br><br>
+            <input type="submit" value="Submit Query" onclick="strFun()" return false;>
+            <p id="outpt"></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+Nodejs --> runtime platform on which we can use js code
+				--> its like jvm for java
+		-- used to setup webserver at backend
+				
+				
+				
+				
+REPL -- read evaluate print loop

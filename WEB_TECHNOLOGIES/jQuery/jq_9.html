@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <ul>
+            <li>Apple</li>
+            <li>Kiwi</li>
+            <li>Strawberry</li>
+        </ul>
+        <script>
+            var listItems = $( 'li' );
+            var rawListItem = listItems[1];
+            var html = rawListItem.innerHTML;
+            console.log(html);
+        </script>
+    </body>
+</html>

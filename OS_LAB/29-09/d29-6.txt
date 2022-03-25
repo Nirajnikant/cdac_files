@@ -1,0 +1,36 @@
+2.
+
+[root@osboxes edac_os]# ssh nirajnikant@192.168.42.6
+nirajnikant@192.168.42.6's password: 
+Welcome to KDE neon User Edition 5.22 (GNU/Linux 5.11.0-37-generic x86_64)
+Last login: Sat Oct  9 00:27:12 2021 from 192.168.42.6
+  nirajnikant@zimmer  ~  ls
+ assignment2_q2.txt                                        Music
+ day5_2.sh                                                 Pictures
+ Desktop                                                   Public
+ Documents                                                 rename.sh
+ Downloads                                                 snap
+ index.html                                                Templates
+'Infosys Campus Recruitment - No Show Communication.pdf'   Videos
+ javasharedresources                                      'VirtualBox VMs'
+ list.txt
+  nirajnikant@zimmer  ~  cd Documents
+/home/nirajnikant/Documents
+  nirajnikant@zimmer  ~/Documents  mkdir testdir
+mkdir: created directory 'testdir'
+  nirajnikant@zimmer  ~/Documents  ls
+java  testdir  workspace-spring-tool-suite-4-4.12.0.RELEASE
+  nirajnikant@zimmer  ~/Documents  
+
+-------------------------------------------------------------------------------
+1.
+
+[osboxes@osboxes ~]$ scp /home/osboxes/assignment2_q2.txt nirajnikant@192.168.42.6:/home/nirajnikant
+The authenticity of host '192.168.42.6 (192.168.42.6)' can't be established.
+ECDSA key fingerprint is SHA256:eQK2RROLXvZHwzR8JPvOYczIxronvYbwOueWxxtzJIA.
+ECDSA key fingerprint is MD5:6a:95:2a:f7:ce:bc:2a:82:d7:58:ca:e0:25:2f:0e:a2.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.42.6' (ECDSA) to the list of known hosts.
+nirajnikant@192.168.42.6's password: 
+assignment2_q2.txt                                   100% 1219   808.5KB/s   00:00    
+

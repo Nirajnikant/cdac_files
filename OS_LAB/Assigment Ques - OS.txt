@@ -1,0 +1,228 @@
+
+Theory Asignments																																Date
+-----------------																																-------
+Ques1 - Difference between kernel and OS 																										22/09/2021
+Ques2 - Write one-liner on Type of OS with examples
+-------------------------------------------------------------
+1. Explain Linux Directory Structure and File System Hierarchy?																					23/09/2021
+
+2. Create 5 directories under /root/edac_os
+
+dir1
+dir2
+dir3
+dir4
+dir5
+
+Create the following files under each directory
+
+dir1 --> file1
+dir2 --> file2
+dir3 --> file3
+dir4 --> file4
+dir5 --> file5
+
+Create file6 and file7 under dir4
+Delete file1 under dir1
+Copy all files from dir4 to dir1
+Move all files from dir1 to dir2
+Delete file1 from dir2
+Remove all the directories except dir2
+Rename dir2 ro finaldir
+List the files under finaldir
+Each file under finaldir should have the following content - 'I'm a file under finaldir'
+------------------------------------------------------------------------------------------
+[Task1]																																			24/09/2021
+-------
+Create a script that takes a number as user input and tells if prvided number is a two digit number or single digit number.
+[Task2]
+-------
+Create a command named as 'myos' - running this command should display the OS you are working on 
+[Task3]
+-------
+Create a command named as 'myshell' - running this command should display the shell you are working on
+[Task4]
+-------
+Create a script that takes a  path and tells you if provoided path is a file or a directory.
+[Task5]
+-------
+Create a script that takes a directory name and lists down all the files (only files) under that dir.
+[Task6]
+-------
+Create a script to get the current date, time, username and current working directory.
+[Task7]
+-------
+Create a script that creates a dir named test and then creates 5 files under it named as file1, file2..file5 and then renames all files by adding .txt extension to all file names
+
+1- How to make the alias permanent?
+2- You have a list of files. Traverse through the list and display the permision set of each file?
+--------------------------------------------------------------------------------------------------
+Ques - Explain the second field in ps -elf output?																								28/09/2021
+---------------------------------------------------
+1. Write a script that performs following operations on the given set of files?	(15)															29/09/2021
+
+a) displays the total count of files
+b) displays the count of *.pdf files and *.docx
+c) rename all *.pdf to *.docx
+d) displays the count of *.pdf files and *.docx
+e) displays only those files which have underscore '_' in their names
+
+msexchange.qlv
+NecessaryComplianceViolations.docx
+NewDoc12-23-202016.51.pdf
+OpenCases.csv
+OPS-94632_new.tar
+OS-Windows.pdf
+QQL.json
+Ransomware.docx
+Red_HatReferenceGuide.pdf
+ScriptAnalysis.xlsx
+Scriptpage.jpg
+SolarWinds_Supply-Chain_Attack_UDdashboard.json
+Splunk_PC_App.png
+Splunk_VM_App.png
+Studio_Malware_July_2013.xlsx
+TroubleshootingAgentPermissionIssuesforWindows.pdf
+UDC_Demo_20210106.xml
+Video2020-11-10at7.12.43PM.mp4
+VMware-workstation-full-15.5.5-16285975.exe
+VMware-workstation-full-16.0.0-16894299.exe
+WhatsAppImage2020-11-05at2.47.06PM.jpeg
+win.txt
+
+2. Write a script that displays the user information on the linux box in the following format:	(10)
+Username	Shell assigned to that user
+
+3. Write a command that fetches the list of all files under /root directory that are more than 2KB in size
+
+4. Create a script that asks for a user name and add that user with password same as that of user name. The user added should be assigned nologin shell
+
+5. Create a calculator program in bash that takes two numbers (integers) and display menu to the user for various mathematical operations. Hint: Switch Case Break
+
+6. Create 2 VMs - both CentOS 7 (with fresh snapshots) with names - machineA and machineB
+	1. From machineA copy any file to machineB
+	2. From machineA - create a dir named 'testdir' on machineB
+	
+7. Create a script that depicts sending the process to background so that the next command in sequence can run without wait
+
+8. Create a script that displays the system information like: OS name, kernel version, RAM, etc.
+
+9. Create a shell script to find the largest among the 3 given numbers
+
+10. Create a shell program to check whether a given string is palindrome
+
+11. Create a shell program to count number of words, characters, white spaces and special symbols in a given text
+
+12. Create a script to remove all empty lines from a file
+
+13. Create a script that fetches only the IP address of the machine from output of ifconfig command
+
+14. How to run the c program in bash
+---------------------------------------
+Ques - Difference between 6,9 and 15 kill Signals.																								30/09/2021
+--------------------------------------------------	
+Que 1 - Need of memory management?																												03/10/2021
+Que 2 - Given free memory partitions of 100K, 500K, 200K, 300K, and 600K (in order), how would 
+each of the First-fit, Best-fit, and Worst-fit algorithms place processes of 212K, 417K, 112K, and 426K (in 
+order)
+Que 3 - Which algorithm makes the most efficient use of memory?
+----------------------------------------------------------------
+
+
+
+
+
+Lab Assignments		(Optional)		
+---------------
+1.Create a directory sample																														22/09/2021
+2.Go inside  sample directory
+3.Create directory with your name
+4.Check the list of directories here
+5.Go outside of current directory
+
+6.Create data1->data2->data3->data4 directory
+7.Go to data4
+8.Create data5 dir inside data3
+9.Create a.txt,b.txt file inside data1
+10.Create c.txt d.txt file inside data5
+11.Go to data5
+12.Copy d.txt to data4
+13.Move c.txt to data4
+14.Copy a.txt to data3
+15.Move b.txt to data4
+
+16.Go to data4
+17.Move a.txt to data2
+18.Go to data1
+19.Copy data5 to data2
+20.Move data4 to data5
+----------------------------
+DO this one:#create a directory 'testdir'																										23/09/2021
+#5 files in this directory
+#set 755 as permissions of the file in this directory
+#then list all the files with permissions
+#chnage the permissions to 644
+#list all the files with modified permissions
+#delete all the files
+#Create a directory testdir
+#Create 5 files under it with name as file1,file2...file5
+#In every file enter the content as 
+#file1 -> This is file1
+#.
+#.
+#file5 -> This is file5
+------------------------------
+Create a script that takes a user name and lists down all the files he owns? 																		24/09/2021
+Create a script that takes a user name and lists down all the files he owns? and also tell if each path is a file or a dir?
+Write a script that creates 1000 directories with 1000 files
+-------------------------------------------------------------
+[task1_lab]																																			27/09/2021
+Create a script that asks user to enter two numbers like this:= -
+Enter the first number: 
+Enter the second number:
+Now display which number is greater?
+
+[task2_lab]
+Create a script that asks the user to enter two numbers like this - 																				
+Enter the first number: 
+Enter the second number:
+Now display - sum, difference, multiplication and division results of provided numbers?
+-----------------------------------------------------------------------------------------
+1. Create a script that creates the firefox process and then stop the firefox process using SIGKILL sign.											29/09/2021
+
+2. Create a script that takes the process name and displays it's pid? - It should throw the error if process name enetered is incorrect or doesnt exist on the system
+3. Create a script that takes a pid and displays the process name
+ps -p <pid> | grep -v "TTY" | awk '{print $NF}'
+
+4. Create a script that asks for a command name - then displays it's absolute path and the runs it and displays the output?
+5. Perform Q1 - change: script will ask for multiple process names this time. User enters multiple processes(comma separeted) and then system initiates and then kills those processes. eg: firefox,vi,top
+6. File1	File2
+	cat		dog
+	mat		car
+	dog		poor
+	note	man
+	bag		bat
+	bat		ball
+Create a script that tells if the items present under file2 are there in file1 or not. Need to parse through each item.
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

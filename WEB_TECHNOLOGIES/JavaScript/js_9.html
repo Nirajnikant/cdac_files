@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 9</title>
+        <script>
+            function sum_avg() {
+                var res = 0;
+                for(i=0; i<arguments.length; i++){
+                    res += arguments[i];
+                    
+                }
+                var avg = res/arguments.length;
+                document.write("Sum = "+ res + "<br>");
+                document.write("Average = "+ avg + "<br><br><br>"); 
+                  
+            } 
+        </script>
+    </head>
+    <body>
+        <script>
+            sum_avg(10,20);
+			sum_avg(10,20, 30);
+			sum_avg(1,2,3,4,5,6,7,8,9);
+        </script>
+    </body>
+</html>

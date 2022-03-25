@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript 16</title>
+        <style>
+            form {
+                text-align: center;
+                padding-top: 100px;
+            }
+            #answer1 {
+                color:fuchsia;
+                font-weight: bolder;
+                animation: blink 1s infinite;
+            }
+        </style>
+        <script>
+            function bingo() {
+                var n = document.getElementById("numb").value;
+                console.log(n);
+                var arr = [23,42,12,36,28];
+                for(var i=0;i<arr.length;i++) {
+                    console.log(i)
+                    if(arr[i]==n) {
+                        //document.getElementById("demo").innerHTML = "";
+                        //document.getElementById("bingo").innerHTML = "BINGOOO!!!!!";
+                        document.getElementById("disp").innerHTML = "BINGOOO!!!!!";
+                        break;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter a no.:
+            <input type="text" name="number" id="numb" autofocus>
+            <br>
+            <br>
+            <br>
+            <input type="button" value="Check" id="butn" onclick="bingo()">
+            <br>
+            <br>
+            <div id="disp">
+                <p>Check if you win</p>
+            </div>
+        </form>
+    </body>
+</html>

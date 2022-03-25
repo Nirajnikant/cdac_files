@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 12</title>
+        <script>
+            function compoundInterest(p,r,n) {
+                return (p*Math.pow((1 + r/100),n))-p;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>---------------------------------------------------------</h3>
+        <h3>******Calculate Compound Interest******</h3>
+        <h3>---------------------------------------------------------</h3>
+        <p id='principle'>&emsp;Principle&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+        <p id='rate'>&emsp;Rate&emsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+        <p id='year'>&emsp;Year&emsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+        <p id='ci'>&emsp;Compound Interest&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+        <script>
+            var p = parseInt(prompt("Enter the principle value","Principle"));
+            var r = parseInt(prompt("Enter the rate value", "rate of interest"));
+            var n = parseInt(prompt("Enter the no. of years","period in years"));
+            document.getElementById('principle').innerHTML+=p;
+            document.getElementById('rate').innerHTML+=r;
+            document.getElementById('year').innerHTML+=n;
+            document.getElementById('ci').innerHTML += (compoundInterest(p,r,n));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+var express = require("express")
+var bodyparser = require("body-parser")
+
+var app = express();
+
+
+app.use(bodyparser.json());
+//app.use(express.json())
+//app.use(bodyparser.urlencoded({extended:false}))
+
+app.get("/",(req,res) =>{
+	res.sendFile("sample.html",{root:__dirname})
+})
+
+app.get("/process",(req,res) =>{
+	var str = ""
+	for ( var i = 0 ; i< req.query.num ; i++){
+		str+= (i*req.query.num)+"<br>"
+	}
+	res.send(str)
+})
+
+
+app.post("/process",(req,res) =>{
+	var str = ""
+	for ( var i = 0 ; i< req.body.num ; i++){
+		str+= (i*req.body.num)+"<br>"
+	}
+	res.send(str)
+})
+
+
+app.listen(3000)

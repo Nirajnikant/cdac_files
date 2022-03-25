@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 14</title>
+        <script>
+            function getWeekDay() {
+            var day = new Array();
+            day[0] = "SU";
+            day[1] = "MO";
+            day[2] = "TU";
+            day[3] = "WE";
+            day[4] = "TH";
+            day[5] = "FR";
+            day[6] = "SA";
+
+            let now = new Date();
+            var dayy = day[now.getDay()];
+            return dayy;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(getWeekDay());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+[Day 8]
+1. Difference between kill signal 6,9 and 15.
+
+-->
+The kill -9 command sends a SIGKILL signal indicating to a service to shut down immediately. An unresponsive program will ignore a kill command, but it will shut down whenever a kill -9 command is issued. Use this command with caution. It bypasses the standard shutdown routine so any unsaved data will be lost.
+
+The SIGABRT or kill -6 signal is sent to a process to tell it to abort, i.e. to terminate. The signal is usually initiated by the process itself when it calls abort() function of the C Standard Library, but it can be sent to the process from outside like any other signal.
+
+The SIGTERM or kill -15 signal is sent to a process to request its termination. Unlike the SIGKILL signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate.

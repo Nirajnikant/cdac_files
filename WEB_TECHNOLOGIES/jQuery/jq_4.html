@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="target">
+            div#target<br>
+            <span id="change">span(change me!)</span>
+        </div>
+        <script>
+            $("#target").css("background", "#eb7a34")
+            $("#target > span").css("background", "#34eb55");
+        </script>
+    </body>
+</html>

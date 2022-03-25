@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap 4 Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" maxlength="10" onkeypress="return /[a-z]/i.test(event.key)"></td>
+            </tr>
+            <tr>
+                <td>Birth Date:</td>
+                <td>
+                    <select name="month" id="selectMonth">
+                        <option>January</option>
+                        <option>Februray</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                    <select name="date" id="selectDate"></select>
+                    <select name="year" id="selectYear"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email Address: </td>
+                <td><input type="email" id="email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Use format name@company.com)</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male<br>
+                    <input type="radio" name="gender" value="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Lucky Number: </td>
+                <td><input type="text" 
+                    maxlength="4" 
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="lnum">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A number between 1 and 100)</td>
+            </tr>
+            <tr>
+                <td>Favorite Foods: </td>
+                <td>
+                    <input type="checkbox" id="pizza" name="favfood" value="pizza"> Pizza<br>
+                    <input type="checkbox" id="pasta" name="favfood" value="pasta">Pasta<br>
+                    <input type="checkbox" id="chinese" name="favfood" value="chinese">Chinese<br>
+                </td>
+            </tr>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="validateForm()">Send Data</button>
+        <br><br>
+        <div id="change"></div>
+
+        <script>
+            var selectDate = document.getElementById("selectDate");
+            var selectYear = document.getElementById("selectYear");
+            var contentsd;
+            var contentsy;
+            for (let i = 1; i <= 31; i++) {
+                contentsd += "<option>" + i + "</option>";
+            };
+
+            var currentYear = (new Date()).getFullYear();
+            for(let i=1950;i <= currentYear;i++) {
+                contentsy += "<option>" + i + "</option>";
+            };
+            selectDate.innerHTML = contentsd;
+            selectYear.innerHTML = contentsy;
+
+            
+
+
+
+            function validateForm() {
+            var selectDate = document.getElementById("selectDate").value;
+            var selectYear = document.getElementById("selectYear").value;
+            var selectMonth = document.getElementById("selectMonth").value;
+            let name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var gender = document.getElementsByName("gender");
+            console.log(name);
+            console.log(email);
+            console.log(selectDate);
+            console.log(selectYear);
+            //get radio button values
+            var gender_value;
+            for(var i = 0; i < gender.length; i++){
+                if(gender[i].checked){
+                    gender_value = gender[i].value;
+                }
+            }
+            console.log(gender_value)
+
+            
+
+
+            //get checkbox values
+            var pizza = document.getElementById("pizza");  
+            var pasta = document.getElementById("pasta");
+            var chinese = document.getElementById("chinese");  
+            let favfood = "Favourite Food: "
+            if(pizza.checked) {
+                favfood += "Pizza ";
+            }
+            if(pasta.checked) {
+                favfood += "Pasta ";
+            }
+            if(chinese.checked) {
+                favfood += "Chinese"
+            }
+            console.log(favfood);
+            console.log("pizza.checked"+pizza.checked);
+            console.log("pasta.checked"+pasta.checked);
+            console.log("chinese.checked"+chinese.checked);
+            //oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" 
+            let lnum = document.getElementById("lnum").value;
+            console.log(lnum.padStart(4, '0'));
+
+            
+                let arr =[selectDate,selectYear,selectMonth,name,email,gender_value,lnum];
+                for(e in arr) {
+                    //var vorder = document.getElementById(arr[e]).value;
+                    if(arr[e] === null || arr[e] =="" || ((pizza.checked || pasta.checked || chinese.checked)==false)) {
+                        alert("Everything field is mandatory")
+                        break;
+                    }
+                }
+     
+                display(name,selectDate,selectYear,selectMonth,email,gender_value,favfood,lnum);
+            
+
+            }
+
+            function display(name,selectDate,selectYear,selectMonth,email,gender_value,favfood,lnum) {
+                var disp = document.getElementById("change");
+                let data = "You entered<br>Name: "+name+"<br>Birth Date: "+selectMonth+"/"+selectDate+"/"+selectYear+"<br>Email Address: "+email+"<br>Gender: "+gender_value+"<br>Lucky Number: "+lnum+"<br>"+favfood;
+                disp.innerHTML=data;
+                
+
+
+            }
+        </script>
+    </body>
+</html>

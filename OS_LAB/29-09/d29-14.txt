@@ -1,0 +1,9 @@
+How to run the c program in bash
+
+
+----->>>
+to run a c program in bash first we need to create the desired c program
+then we run the command
+        gcc hello.c -o hello.sh
+this creates a obejct file for bash
+which can be executed as ./hello.sh

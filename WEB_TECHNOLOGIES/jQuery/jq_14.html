@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <form>
+            Name: 
+            <input type="text" name="name"id="pname"/><br><br>
+            Age:
+            <input type="number" name="age" id="age" max="100"><br><br>
+            Employment Status:
+            <select name="estatus" id="empStatus">
+                <option>True</option>
+                <option>False</option>
+            </select><br><br>
+            <input type="button" value="Add" id="addtoJson" onclick="ConvertFormToJSON(form)">
+            <input type="button" value="Display" id="displayJson" onclick="display()" >
+
+        </form>
+        <p id="rewrite"></p>
+        <table id='table' border="1">
+            <!-- HEADING FORMATION -->
+            <tr>
+                <th>Name </th>
+                <th>Age </th>
+                <th> Employement Status</th>
+                <!-- <th>GFG Articles</th> -->
+            </tr>
+        </table>
+        <script>
+            var data = [];
+            function ConvertFormToJSON(form){
+                var array = jQuery(form).serializeArray();
+                var json = {};
+                
+                jQuery.each(array, function() {
+                    json[this.name] = this.value || '';
+                });
+                
+                // return json;
+                console.log(json);
+                // var feed = {created_at: "2017-03-14T01:00:32Z", entry_id: 33358, field1: "4", field2: "4", field3: "0"};
+
+                
+                data.push(json);
+                console.log(data);
+                // $("p").html=data;
+                
+            };
+                
+            function display() {
+                var employee = "";
+                
+                $.each(data, function (key, value) {  
+                                employee += '<tr>';
+                            employee += '<td>' + 
+                                value.name + '</td>';
+  
+                            employee += '<td>' + 
+                                value.age + '</td>';
+  
+                            employee += '<td>' + 
+                                value.estatus + '</td>';
+
+                            employee += '</tr>'; 
+                        ;
+                });
+                $('#table').append(employee)
+            }
+        </script>
+    </body>
+</html>

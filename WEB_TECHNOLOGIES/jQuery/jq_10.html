@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <ul>
+
+            <li>Apple</li>
+            <li>Kiwi</li>
+            <li>Strawberry</li>
+ 
+        </ul>
+        <script>
+                var liItem = $("li:eq(2)");
+                var liItemTxt = liItem.text();
+                var liItemIndex = liItem.index();
+
+                var liItem1 = $("li:eq(1)");
+                var liItemTxt1 = liItem1.text();
+                var liItemIndex1 = liItem1.index();
+
+                var liItem2 = $("li:eq(0)");
+                var liItemTxt2 = liItem2.text();
+                var liItemIndex2 = liItem2.index();
+
+                $("ul").prepend(liItemIndex+". "+liItemTxt+"<br>");
+                $("ul").prepend(liItemIndex1+". "+liItemTxt1+"<br>");
+                $("ul").prepend(liItemIndex2+". "+liItemTxt2+"<br>");
+            
+        </script>
+    </body>
+</html>

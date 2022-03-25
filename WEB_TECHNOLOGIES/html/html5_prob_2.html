@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML 5 Q2 use CSS</title>
+        <style>
+            body {
+                background-color:#1b67e0 ;
+                color:white;
+                font-family: Arial;
+            }
+            table, th, td {
+                border: 1px;
+            }
+            table {
+                border-spacing: 25px;
+            }
+            input[type='number']{
+            width: 30px;
+            } 
+            #col1 {
+                text-align: right;
+            }
+            #col2 {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body >
+        <fieldset>
+            <legend>Registration Details</legend>
+            <table align="center">
+                <tr>
+                    <td id="col1">University :</td>
+                    <td>
+                        <input type="text" name="university" size="33"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Institute :</td>
+                    <td>
+                        <input type="text" name="institute" size="33"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Branch :</td>
+                    <td>
+                        <select name="branch">
+                            <option selected value="defau;t">--select--
+                            <option value="mechanical">Mechanical
+                            <option value="cs">Computer Science
+                            <option value="electronics">Electronics
+                            <option value="electrical">Electrical
+                            <option value="civil">Civil</option>
+                            </option> 
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Degree :</td>
+                    <td>
+                        <select name="degree">
+                            <option selected value="defau;t">--select--
+                            <option value="be">B.E.
+                            <option value="btech">B.Tech
+                            <option value="me">M.E.
+                            <option value="mtech">M.Tech
+                            </option> 
+                        </select>
+                        <input type="radio" name="degre" value="pursuing"/>Pursuing
+                        <input type="radio" name="degre" value="completed"/>Completed
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Averagr CPI :</td>
+                    <td>
+                        <input type="number" name="avg-cpi" min="0.00" max="10.00" step="0.01">
+                        Upto
+                        <input type="number" min="0" max="8"> th Semester
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Experience :</td>
+                    <td>
+                        <input type="number" min="0" size="2"/> Years
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col1">Your Website Or Blog :</td>
+                    <td>
+                        <input type="url" value="https://" size="33"><br>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </body>
+</html>

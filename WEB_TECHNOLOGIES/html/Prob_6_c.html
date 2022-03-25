@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Problem 6.c</title>
+    </head>
+    <body>
+        <table bgcolor="#ffc7de" border="1">
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" size="20"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Code</td>
+                <td>
+                    <input type="text" name="ecode" size="3"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>
+                    <input type="radio" name="check" value="admin"/>ADMIN<br>
+                    <input type="radio" name="check" value="hr"/>HR<br>
+                    <input type="radio" name="check" value="tech"/>TECHNICAL<br>
+                    <input type="radio" name="check" value="acc"/>ACCOUNTS<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Joining</td>
+                <td>
+                    <input type="text" name="dt" size="2"/>/
+                    <input type="text" name="mnth" size="2"/>/
+                    <input type="text" name="yr" size="4"/><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;dd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yyyy
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Training programs Attended </td>
+                <td>
+                    <input type="checkbox" name="html-dhtml" value="html/dhtml">HTML/DHTML<br>
+                    <input type="checkbox" name="java" value="java">JAVA<br>
+                    <input type="checkbox" name="client-server" value="client/server">CLIENT/SERVER<br>
+                    <input type="checkbox" name="net" value=".net">.NET<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Training Programmes need to attend</td>
+                <td>
+                    <select size="2" multiple name="prog">
+                        <option value="ih">Internet-HTML
+                        <option value="js">JavaScript
+                        <option value="vbs">VBscript
+                        <option value="as">ASP
+                        <option value="xm">XML
+                        <option value="jv">JAVA
+                        <option value="jsp">jsp
+                        </option>
+                    </select><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Send inforamtion at</td>
+                <td>
+                    <a href="#">empinfo@patni.com</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

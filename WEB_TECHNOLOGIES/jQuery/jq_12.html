@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>Members of my Group are </h3>
+        <ol id="list">
+        </ol>
+        <script>
+            var arr = ["JOHN","STEVE","BEN","DAMON","IAN"];
+            for(var i=0;i<arr.length;i++){
+                $("#list").append($("<li>").text(arr[i]));
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Form page</title>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-size: 20px;
+            }
+            input{
+                margin:20px;
+                padding:10px;
+            }
+            input[type=”text”],
+            textarea {
+              width:200px;
+                margin:20px;
+                padding:5px;
+                height:30px;
+                display: block;
+            }
+            textarea{
+                resize:none;
+                height:60px;
+            }
+        </style>
+    </head>
+    <body>
+
+                            
+        <form action='/' method='POST'>
+            <input type='text' name="name" id="name" placeholder='name'/>
+            <!--
+            <textarea name='message' placeholder='message'></textarea>
+            -->
+            <input type='submit'/>
+        </form>
+        <div></div>
+
+        <script>
+            $('form').on('submit',makeRequest);
+            function makeRequest(e){
+                e.preventDefault();
+                $.ajax({
+                    url:'/',
+                    type : 'POST',
+                    success: function(data){
+                        if(data.message) {
+                            $('div').html(data.message);
+                        } 
+                        else {
+                            $('div').html('Sorry, an error occured');
+                        }
+                    },
+                    error: function() {
+                        $('div').html('Sorry, an error occurred');
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Problem 3</title>
+    </head>
+    <body>
+        <script>
+            var x = parseInt(prompt("Enter a no."));
+            var y = parseInt(prompt("Enter 2nd no."));
+            var sign = prompt("Enter the operation");
+            switch(sign) {
+                case "+":
+                    document.write(x+y);
+                    break;
+
+                case "-":
+                    if(x>y)
+                        document.write(x-y);
+                    else
+                        document.write(y-x);
+                    
+                    break;
+            
+                case "/":
+                    document.write(x/y);
+                    break;
+
+                case "*":
+                    document.write(x*y);
+                    break;
+                    
+                default:
+                    document.write("Enter a valid operations");
+            }
+        </script>
+    </body>
+</html>

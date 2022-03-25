@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 11</title>
+        <script>
+            function sq_sum(n) {
+                var res = 0;
+                for(var i=1;i<=n;i++) {
+                    
+                    if(i%2==0) 
+                        res +=(i*i);
+                }
+                return res;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var num = parseInt(prompt("Enter the no."));
+            document.write(sq_sum(num));
+        </script>
+    </body>
+</html>

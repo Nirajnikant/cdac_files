@@ -1,0 +1,24 @@
+</html
+  <head>
+  </head>
+  <body>
+    <input type="text" id="wdth">
+    <p id="demo"></p>
+    <script>
+      var rect = {
+        width: " ",
+        lenght: " ",
+        area: function() {
+            //document.write(this.width*this.lenght);
+            return (this.width*this.lenght);
+        }
+      };
+      const me = Object.create(rect);
+
+      me.width = document.getElementById("wdth"); // inherited properties can be overwritten
+      me.lenght = 5;
+      document.getElementById("demo").innerHTML=me.area();
+    </script>
+    
+  </body>
+</html>

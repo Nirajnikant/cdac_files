@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/process">
+            <input type="number" name="num" id="num" onchange="fun1()"><br>
+            <p id="demo"></p>
+        </form>
+
+        <script>
+            function fun1() {
+                var xhr = new XMLHttpRequest("num");
+                var num = document.getElementById("num").value;
+                xhr.setRequestHeader('X-Test', 'one');
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState == 4 && xhr.status == 200) {
+                        
+                        document.getElementById("demo").innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.open("POST", "http://localhost:3000/", true);
+                xhr.send(num);
+            }
+        </script>
+    </body>
+</html>

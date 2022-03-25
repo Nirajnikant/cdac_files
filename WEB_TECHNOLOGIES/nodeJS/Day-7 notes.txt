@@ -1,0 +1,229 @@
+library VS framework:
+
+JS :
+
+lib : .js --> JS code, functionality 
+    <script src="xx.js">
+    dev : where to use the functionality
+
+jquery.js
+$("p").html()
+
+framework: .js, tools
+   framework takes control ---> how is the flow of the app
+
+- Angular
+- React
+- Vue
+
+- BackboneJS
+- EmberJS
+
+
+
+<input type="button" id="b1">
+
+document.getElementsByTagName("form")[0].submit();
+
+document.getElementById("b1").click(f1());
+
+
+jquery : $("#b1").click(function(){...})
+
+
+1.2
+
+1.4  bind(), unbind()
+$("#p1").bind("click", function(){  //does something})
+
+delegate(), undelegate()
+live(), die()
+
+on(), off()
+
+$("#p1").on("click", function(){  //does something})
+
+
+$(element).hide(duration [, callback])
+
+$("h1").hide(5000, function(){ done!!})
+
+
+Advanced JS concepts: React
+
+- Class
+- let, const
+- lambda in Java, fat arrow in Typescript, arrow function in Jvaascript
+
+
+const --> constant in JS
+
+
+
+
+block:
+{
+
+}
+
+scope:
+- local
+- global
+- block {...}
+
+
+nested functions:
+
+variable hoisting
+
+f1(){
+   //s1
+   f2(){
+     //s2
+      f3(){
+         //s3
+         let v1 = 100;
+      }
+   }
+   v1  -- error
+}
+
+
+
+
+
+------------- fat arrow - demo1 -----------
+
+function f1(){
+  console.log("Hello-1")
+}
+
+f1()
+
+var f2 = function(){
+  console.log("Hello-2")
+}
+
+f2()
+
+var f3 = () => console.log("Hello-3")
+f3()
+
+----------------- lambda demo2------------------------
+
+
+function f1(uname){
+  console.log("Hello-1 " + uname)
+}
+
+f1("Akshay")
+
+var f2 = function(uname){
+  console.log("Hello-2 " + uname)
+}
+
+f2("Yash")
+
+var f3 = (uname) => console.log("Hello-3 " + uname)
+
+f3("Shivam")
+
+----------  lambda demo3
+
+function f1(str){
+  console.log(str)
+  console.log(str.length)
+  console.log(str.toUpperCase())
+  console.log(str.charAt(3))
+}
+
+f1("Akshay kulat")
+
+var f2 = function(str){
+  console.log(str)
+  console.log(str.length)
+  console.log(str.toUpperCase())
+  console.log(str.charAt(3))
+}
+
+f2("Yash kumar")
+
+var f3 = (str) => {
+  console.log(str)
+  console.log(str.length)
+  console.log(str.toUpperCase())
+  console.log(str.charAt(3))
+}
+
+f3("Parag Musale")
+
+
+-----------------  lambda demo 4------------
+
+function add1(a,b){
+   return a+b;
+}
+
+console.log(add1(1,2))
+
+var add2 = function(a,b){
+  return a+b;
+}
+
+console.log(add2(10,20))
+
+
+var add3 = (a,b) => a+b
+console.log(add3(100,200))
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+
+NodeJS - Node -- Javascript Runtime env/platform
+
+
+
+.msi  --> Microsoft Installer
+
+REPL - Read Evaluate Print Loop
+
+
+
+MEAN - Mongo Express Angular Node
+
+MERN - Mongo Express React Node
+
+MEN - Mongo Express Node   + HTMl, CSS
+
+
+
+setTimeout(f1, 5000)
+
+geolocation.getCurrentPosition(showPosition)
+
+xhr.onreadystatechange = function(){...}
+
+$("p").click(function(){...})
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 17</title>
+        <style></style>
+        <script>
+            var rect;
+            function Rectangle(wid, len) {
+                this.width = wid;
+                this.length = len;
+                this.area = this.width * this.length;
+            }
+
+            function Circle(radius) {
+                this.radius = radius;
+                this.area = Math.pow(this.radius,2)*Math.PI;
+                this.circumference = Math.PI*2*this.radius;
+            }
+
+            function addRectangle() {
+                rect = new Rectangle(document.getElementById("brdth").value, document.getElementById("len").value)
+                console.log(rect.length+" "+rect.width+" "+rect.area);
+                document.getElementById("demo1").innerHTML = "Area : "+rect.area;
+            }
+
+            function addCircle() {
+                circ = new Circle(document.getElementById("radius").value);
+                console.log(circ.radius+" "+circ.area+" "+circ.circumference);
+                document.getElementById("demo2").innerHTML = "Area : "+parseFloat(circ.area).toFixed(2)+"<br>Circumference : "+parseFloat(circ.circumference).toFixed(2)
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <h1>Rectangle</h1>
+                    Enter the length : 
+                    <input type="text" id="len" size="40px">
+                    <br>
+                    <br>   
+                    Enter the breadth : 
+                    <input type="text" id="brdth" size="40px">
+                    <br>
+                    <br>
+                    <br>   
+                    <button onclick="addRectangle()">Click me</button>
+                    <p id="demo1"></p>
+                </td>
+                <td>
+                    <h1>Circle</h1>
+                    Enter the Radius : 
+                    <input type="text" id="radius" size="40px">
+                    <br>
+                    <br>
+                    <br>   
+                    <button onclick="addCircle()">Click me</button>
+                    <p id="demo2"></p>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>

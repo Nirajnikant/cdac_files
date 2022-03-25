@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            form {
+                text-align: center
+                ;
+            }
+        </style>
+        <script>
+            function myFunction() {
+                document.getElementById("mfs").reset();
+            }
+            function multable() {
+                var snum = parseInt(document.getElementById("startno").value);
+                var endnum = parseInt(document.getElementById("endno").value);
+                var mulnum = parseInt(document.getElementById("multiplier").value);
+                var arr = [];
+                
+                for(var i=snum;i<=endnum;i++) {
+                    arr[i] = i + " times " + mulnum + " = " +i*mulnum;
+                }
+                for(var i=snum;i<arr.length;i++) {
+                    console.log(arr[i]);
+                    document.getElementById("result").value=arr.join("\n");;
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form id="mfs">
+            Start Number:
+            <input type="text" id="startno">
+            End Number:
+            <input type="text" id="endno">
+            Multiply By:
+            <input type="text" id="multiplier">
+            <br>
+            <br>
+            <input type="button" id="btn" value="Times Table" onclick="multable()">
+            <br>
+            <br>
+            <input type="button" onclick="myFunction()" value="Reset form">
+            <br>
+            <br>
+            <textarea id="result" name="w3review" rows="4" cols="50"></textarea>
+
+        </form>
+    </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            form {
+                text-align: center;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            function printTable() {
+                let start = document.getElementById('num1').value;
+                let end = document.getElementById('num2').value;
+                let times = document.getElementById('num3').value;
+                console.log(start+' '+end+' '+times);
+                for(let i=start;i<=end;i++) {
+                    let product = i * times;
+                    finalOutPut = "\n"+i+" times "+times+" = "+product;
+                    document.getElementById("result").innerHTML +=finalOutPut;
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <br>
+            <form>
+                Serial No. : &nbsp;
+                <input type='number' id='num1' value="1"/>
+                End No.: &nbsp;
+                <input type='number' id='num2'/>&nbsp;&nbsp;
+                Multiply By: &nbsp;
+                <input type='number' id='num3'/><br><br>
+                <button type="button" id="btn1" class="btn btn-primary" onclick="printTable()">Submit</button>
+                <br><br>
+                <textarea id='result'></textarea>
+            </form>
+        </div>
+    </body>
+</html> -->

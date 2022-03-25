@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{ 
+    Html.RenderPartial("PartialView1");
+}
+
+with html.partial....
+@Html.Partial("PartialView1")
+
+<h2>After Partial</h2>
+
+key1 @ViewData["key1"].ToString()
+<br />
+@{ 
+    int i = (int)ViewData["key2"];
+    bool b = ViewBag.key3;
+}
+key2 @i
+<br />
+@Session["key5"].ToString();
+key3 @b
+<br />

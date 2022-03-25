@@ -1,0 +1,5 @@
+EmpID:Name:Salary
+1001:Michael Scott:230000
+1002:Jim Halpert:23000
+1003:Dwight Schrut:23000
+1004:Stanley Hudson:23000

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function empdetails(empid,empname,salary) {
+                this.empid = empid
+                this.empname = empname
+                this.salary = salary
+            }
+            
+            emp1 = new empdetails(1001,"Michael Scott",230000);
+            emp2 = new empdetails(1002,"Jim Halpert",23000);
+            emp3 = new empdetails(1003,"Dwight Schrut",23000);
+            emp4 = new empdetails(1004,"Stanley Hudson",23000);
+            var arr=[emp1,emp2,emp3,emp4];
+
+            arr.forEach(function (emp) {
+                for (let key in emp) {
+                    console.log(`${key}: ${emp[key]}`);
+                }
+            });
+        </script>
+    </head>
+    <body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            var arr = new Array;
+            var count = 0;
+            console.log(arr.length);
+            function empdetails(empid,empname,salary) {
+                this.empid = empid;
+                this.empname = empname;
+                this.salary = salary;
+            }
+            function assignVal() {
+                let eid = document.getElementById('eid').value;
+                let ename = document.getElementById('ename').value;
+                let esal = document.getElementById('esal').value;
+                console.log(eid+" "+ename+" "+esal);
+                newEmp(eid,ename,esal);
+            }
+            function newEmp(empid,empname,salary) {
+                arr[count++] = new empdetails(empid,empname,salary);
+            }
+            function getEmp() {
+                // console.log(arr);
+                // console.log(arr.length);
+                arr.forEach(function (emp) {
+                for (let key in emp) {
+                    console.log(`${key}: ${emp[key]}`);
+                }
+            });
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <form>
+                Enter employee name :&emsp;
+                <input type="number" id="eid" /><br><br>
+                Enter employee name :&emsp;
+                <input type='text' id='ename' /><br><br>
+                Enter employee salary :&emsp;
+                <input type="number" id="esal" /><br><br>
+                <button type="button" onclick="assignVal()" class="btn-primary">Submit</button>
+                &emsp;
+                <button type="button" onclick="getEmp()" class="btn-primary">Get Details</button>
+            </form>
+        </div>
+    </body>
+</html> -->

@@ -1,0 +1,11 @@
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\obj\Debug\day4_25.csproj.CoreCompileInputs.cache
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day4_25.exe.config
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day4_25.exe
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day4_25.pdb
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day1_assignment.exe
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day1_assignment.pdb
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\bin\Debug\day1_assignment.exe.config
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\obj\Debug\day4_25.csproj.CopyComplete
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\obj\Debug\day4_25.exe
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\obj\Debug\day4_25.pdb
+D:\DAC\DotNet\VisualStudio\Assignments\day4_25\obj\Debug\day4_25.csproj.AssemblyReference.cache

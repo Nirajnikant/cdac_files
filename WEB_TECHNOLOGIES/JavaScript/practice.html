@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 17</title>
+        <style></style>
+        <script>
+            var a = document.getElementById("len").value;
+            var rectangle = {
+                width: parseInt(document.getElementById("brdth").value),
+                lenght : parseInt(document.getElementById("len").value),
+                area_re : function() {
+                    return (this.width*this.lenght);
+                }
+            };
+            
+            function solve() {
+                document.getElementById("demo").innerHTML = rectangle.area_re();
+            };
+        </script>
+    </head>
+    <body>
+        Enter the length : 
+        <input type="text" id="len" size="40px">
+        <br>
+        <br>   
+        Enter the breadth : 
+        <input type="text" id="brdth" size="40px">
+        <br>
+        <br>
+        <br>   
+        <button onclick="solve()">Click me</button>
+        
+        <p id="demo"></p>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+JavaScript can "display" data in different ways:
+
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().
+
+
+Using document.write() after an HTML document is loaded, will delete all existing HTML:
+
+Semicolons ;
+    Semicolons separate JavaScript statements.
+        let a, b, c;  // Declare 3 variables
+        a = 5;        // Assign the value 5 to a
+        b = 6;        // Assign the value 6 to b
+        c = a + b;    // Assign the sum of a and b to c
+
+LET
+        Variables defined with let cannot be Redeclared.
+        Variables defined with let must be Declared before use.
+        Variables defined with let have Block Scope.
+                    Variables declared inside a { } block cannot be accessed from outside the block:
+
+
+VAR
+        Variables declared with the var keyword can NOT have block scope.
+                    Variables declared inside a { } block can be accessed from outside the block.
+
+CONST
+        Variables defined with const cannot be Redeclared.
+        Variables defined with const cannot be Reassigned.
+        Variables defined with const have Block Scope.
+
+If you add a number and a string, the result will be a string!
+
+
+Accessing a function without () will return the function object instead of the function result.
+
+LOCAL VARIABLES
+            Variables declared within a JavaScript function, become LOCAL to the function.
+            Local variables can only be accessed from within the function.
+
+
+THIS
+            In a function definition, this refers to the "owner" of the function.
+
+
+Extracting String Parts
+
+    The slice() Method
+        slice() extracts a part of a string and returns the extracted part in a new string.
+        The method takes 2 parameters: the start position, and the end position (end not included).
+                JavaScript counts positions from zero. First position is 0.
+        If you omit the second parameter, the method will slice out the rest of the string:
+                let part = str.slice(7);      Banana, Kiwi
+
+    The substring() Method
+        substring() is similar to slice().
+        The difference is that substring() cannot accept negative indexes.
+
+    The substr() Method
+        substr() is similar to slice().
+        The difference is that the second parameter specifies the length of the extracted part.
+
+Replacing String Content
+    The replace() method replaces a specified value with another value in a string:       
+    The replace() method does not change the string it is called on. It returns a new string.
+
+Converting to Upper and Lower Case
+    A string is converted to upper case with toUpperCase()
+    A string is converted to lower case with toLowerCase()
+
+The concat() Method
+    concat() joins two or more strings
+
+String.trim()
+    The trim() method removes whitespace from both sides of a string
+
+
+Extracting String Characters
+    There are 3 methods for extracting string characters:
+
+        charAt(position)
+            The charAt() method returns the character at a specified index (position) in a string
+        charCodeAt(position)
+            The charCodeAt() method returns the unicode of the character at a specified index in a string:
+            The method returns a UTF-16 code (an integer between 0 and 65535)
+        Property access [ ]
+
+Converting a String to an Array
+        A string can be converted to an array with the split("separator") method
+            If the separator is omitted, the returned array will contain the whole string in index [0].
+            If the separator is "", the returned array will be an array of single characters
+
+String Search
+    String.indexOf()
+        The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string
+    
+    String.lastIndexOf()
+        The lastIndexOf() method returns the index of the last occurrence of a specified text in a string
+
+    Both indexOf(), and lastIndexOf() return -1 if the text is not found
+    Both methods accept a second parameter as the starting position for the search       str.indexOf("locate", 15)
+        The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.
+    
+    String.search()
+        The search() method searches a string for a specified value and returns the position of the match
+
+    The search() method cannot take a second start position argument.
+    The indexOf() method cannot take powerful search values (regular expressions).
+
+    String.match()
+        The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+        string.match(regexp)
+
+    String.includes()
+        The includes() method returns true if a string contains a specified value.
+
+=	x = y	x = y
++=	x += y	x = x + y
+-=	x -= y	x = x - y
+*=	x *= y	x = x * y
+/=	x /= y	x = x / y
+%=	x %= y	x = x % y
+**=	x **= y	x = x ** y
+
+-->

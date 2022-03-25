@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="div1" class="divclass"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <p></p>
+        <script>
+            if($("#div1").hasClass("divclass")) {
+                alert("Div1 has class");
+            }
+            else if($("#div1").hasClass("divclass")) {
+                alert("Div2 has class");
+            }
+            else if($("#div1").hasClass("divclass")) {
+                alert("Div3 has class");
+            }
+            else {
+                alert("No element is applied with class");
+            }
+        </script>
+    </body>
+</html>

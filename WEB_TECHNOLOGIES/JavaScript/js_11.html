@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 11</title>
+        <script>
+            function fib(n) {
+                var n1=0;
+                var n2=1;
+                var n3;
+                document.write(n1+"  ");
+                document.write(n2+"  ");
+                for(var i=2;i<n;++i) {    
+                    n3=n1+n2;    
+                    document.write(n3+"  ");    
+                    n1=n2;    
+                    n2=n3;    
+                } 
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var n = parseInt(prompt("Enter the no."));
+            fib(n);
+        </script>
+    </body>
+</html>

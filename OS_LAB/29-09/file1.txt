@@ -1,0 +1,6 @@
+Enter a String
+jsad jhfjsa^khas kdsjhfs# khfds!ksad 
+Number of Words = 4
+Number of Characters = 36
+Number of White Spaces = 3
+Number of Special symbols = 2

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Problem 5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <img src="D:\DAC\WPT\HTML\images\prob_5.png" height="100" width="300">
+        <h1>About</h1>
+        We are best known for creating the Mozilla <b>Firefox web browser</b>.        
+        The Mozilla project uses a community-based approach to create <b>world-class open source software</b> and to develop new types of collaborative activities. 
+        We create communities of people involved in making the internet experience better for all of us.
+        <h2>Projects</h2>
+        <ul>
+            <li>Active
+                <ul>
+                    <li><a href="#">Firefox</a></li>
+                    <li><a href="#">AutoPush</a></li>
+                    <li><a href="#">BugZilla</a></li>
+                    <li><a href="#">Firefox Accounts</a></li>
+                </ul>
+            </li>
+            <li>Archived
+                <ul>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Presence</a></li>
+                    <li><a href="#">Hello</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Festival Schedule</h2>
+        <table border="1">
+            <tr>
+                <th>Time</th>
+                <th>Topic</th>
+            </tr>
+            <tr>
+                <td>18:00 - 20:30</td>
+                <td>Registration</td>
+            </tr>
+            <tr>
+                <td>20:30 - 23:00</td>
+                <td>Keynote</td>
+            </tr>
+            </table>
+        </table>
+        <h2>Sign Up!</h2>
+        <form>
+            Name :&nbsp;<input type="text" maxlength="20"><br>
+            Email :&nbsp;<input type="text" maxlength="15"><br>
+            Location : &nbsp;
+            <select>
+                <option>New Delhi</option>
+                <option>Mumbai</option>
+            </select>
+            <br>
+            Gender :
+            <input type="radio" name="sex" value="male"/>Male&nbsp;&nbsp;
+            <input type="radio" name="sex" value="femlae"/>Female<br>
+            Experience : &nbsp;<br>
+            <textarea name="exp" rows="3" value="ent"></textarea><br>
+            <input type="submit" name="btnSubmit" value="Sign Up"/><br>
+        </form>
+        <a href="#">Twitter</a>&nbsp;|&nbsp;<a href="#">Facebook</a>&nbsp;|&nbsp;<a href="#">Flickr</a>
+        <script>
+            $("form input").hide();
+        </script>
+    </body>
+</html>

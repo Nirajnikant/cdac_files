@@ -1,0 +1,7 @@
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\bin\Debug\day2_emp.exe.config
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\bin\Debug\day2_emp.exe
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\bin\Debug\day2_emp.pdb
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\obj\Debug\day2_emp.csproj.AssemblyReference.cache
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\obj\Debug\day2_emp.csproj.CoreCompileInputs.cache
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\obj\Debug\day2_emp.exe
+D:\DAC\DotNet\VisualStudio\Day2_22\day2_emp\obj\Debug\day2_emp.pdb

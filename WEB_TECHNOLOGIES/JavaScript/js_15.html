@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 15</title>
+        <style>
+            form {
+                text-align: center;
+                padding: 50px 20px 30px 50px;
+            }
+            legend {
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+                background-color: darkorange;
+            }
+            fieldset {
+                size: 20px;
+            }
+            #done {
+                background-color: darkseagreen;
+                
+            }
+        </style>
+        <script>
+            var repeat = [];
+            function add(){
+                var no1 = parseInt(document.getElementById("no1").value);
+                var no2 = parseInt(document.getElementById("no2").value);
+                
+                //document.getElementById("s1").innerHTML = no1+no2;
+                document.getElementById("t3").value = no1+no2
+		    }
+            function employee_add() {
+                var enam = document.getElementById("ename");
+                if(repeat.length<6) {
+                    var x = enam.value;
+                    repeat.push(x);
+                    enam.value=("");
+                    enam.focus();
+                }
+                repeat.sort();
+                if(repeat.length==6) {
+                    var hid = document.getElementById("list");
+                    hid.value = repeat.join('|');
+                    console.log(hid.value);
+                    var ul = document.getElementById("display");
+                    ul.innerHTML = "";
+                    for (var i = 0; i < 6; i++) {
+                        ul.innerHTML += `<li>${repeat[i]}</li>`;
+                    }
+                    document.getElementById("done").style.display = "block";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Employee Name Sort</legend>
+            <form>
+                Employee name : 
+                <input type="text" name="ename" id="ename" autofocus>
+                <br><br>
+                <input type="button" value="Add" onclick="employee_add()">
+                <input type="hidden" id="list" name="listOfNames">
+                <br><br>
+            </form>
+            <div id="done" style="display:none">
+                Employee name entered:
+                <ul id="display"></ul>
+            </div>
+        </fieldset>
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 15</title>
+        <style>
+            form {
+                text-align: center;
+                padding: 50px 20px 30px 50px;
+            }
+            legend {
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+                background-color: darkorange;
+            }
+            fieldset {
+                size: 20px;
+            }
+            #done {
+                background-color: darkseagreen;
+                
+            }
+        </style>
+        <script>
+            var repeat = [];
+            function employee_add() {
+                var enam = document.getElementById("ename");
+                var x = ename.value;
+                repeat.push(x);
+                enam.value=("");
+                enam.focus();
+                repeat.sort();
+                var hid = document.getElementById("list");
+                hid.value = repeat.join('|');
+                console.log(hid.value);
+                var ul = document.getElementById("display");
+                ul.innerHTML += `<li>${x}</li>`;
+                document.getElementById("done").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Employee Name Sort</legend>
+            <form>
+                Employee name : 
+                <input type="text" name="ename" id="ename" autofocus>
+                <br><br>
+                <input type="button" value="Add" onclick="employee_add()">
+                <input type="hidden" id="list" name="listOfNames">
+                <br><br>
+            </form>
+            <div id="done" style="display:none">
+                Employee name entered:
+                <ul id="display"></ul>
+            </div>
+        </fieldset>
+    </body>
+</html>

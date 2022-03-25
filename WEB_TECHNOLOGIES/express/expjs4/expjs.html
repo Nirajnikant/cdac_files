@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Form page</title>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-size: 20px;
+            }
+            input{
+                margin:20px;
+                padding:10px;
+            }
+            input[type=”text”],
+            textarea {
+              width:200px;
+                margin:20px;
+                padding:5px;
+                height:30px;
+                display: block;
+            }
+            textarea{
+                resize:none;
+                height:60px;
+            }
+        </style>
+    </head>
+    <body>
+        
+                            
+        <!--<form id="myForm" action="process" method="get">-->
+            <input type='text' name="pswd" id="pswd" placeholder='number'/>
+            <!--
+            <textarea name='message' placeholder='message'></textarea>
+            <input type='submit'/>
+            
+        </form>-->
+        <div></div>       
+        <script>
+            $(document).ready(function() {
+                $("input").blur(function() {
+                    var txt = $("input").val();
+                    $.post("/", function(result){
+                    $("div").html(result);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
